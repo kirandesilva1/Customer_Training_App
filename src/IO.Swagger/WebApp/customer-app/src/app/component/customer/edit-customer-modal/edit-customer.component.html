@@ -1,0 +1,35 @@
+<mat-dialog-content>
+    <form [formGroup]="customerForm" class="example-form">
+        <mat-form-field>
+            <input matInput type="text" formControlName="name" required>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="text" formControlName="numberOfOrders">
+        </mat-form-field>
+        <div formGroupName="address" class="example-form">
+            <mat-form-field>
+                <input matInput type="text" formControlName="streetName" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput type="text" formControlName="zipCode" required>
+            </mat-form-field>
+        </div>
+    </form>
+    <button
+            class="button-spacing"
+            type="button"
+            mat-button mat-raised-button
+            color="primary"
+            (click)="saveCustomer()" >
+        Save
+    </button>
+    <button
+            class="button-spacing"
+            type="button"
+            mat-button mat-raised-button
+            color="primary"
+            (click)="close()">
+        Close
+    </button>
+</mat-dialog-content>
+

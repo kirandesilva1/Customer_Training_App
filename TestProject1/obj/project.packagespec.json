@@ -1,0 +1,48 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "/Users/dks0488411/Downloads/aspnetcore-server 2/TestProject1/TestProject1.csproj",
+    "projectName": "TestProject1",
+    "projectPath": "/Users/dks0488411/Downloads/aspnetcore-server 2/TestProject1/TestProject1.csproj",
+    "outputPath": "/Users/dks0488411/Downloads/aspnetcore-server 2/TestProject1/obj/",
+    "projectStyle": "PackageReference",
+    "fallbackFolders": [
+      "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+    ],
+    "originalTargetFrameworks": [
+      "net20"
+    ],
+    "sources": {
+      "https://api.nuget.org/v3/index.json": {},
+      "https://www.myget.org/F/dotnet-core/api/v3/index.json": {}
+    },
+    "frameworks": {
+      "net20": {
+        "projectReferences": {}
+      }
+    },
+    "warningProperties": {
+      "warnAsError": [
+        "NU1605"
+      ]
+    }
+  },
+  "frameworks": {
+    "net20": {
+      "dependencies": {
+        "Microsoft.NET.Test.Sdk": {
+          "target": "Package",
+          "version": "[16.2.0, )"
+        },
+        "NUnit3TestAdapter": {
+          "target": "Package",
+          "version": "[3.13.0, )"
+        },
+        "nunit": {
+          "target": "Package",
+          "version": "[3.12.0, )"
+        }
+      }
+    }
+  }
+}

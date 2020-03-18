@@ -1,0 +1,10 @@
+<!--ADD NEW CUSTOMER-->
+<app-addcustomer (refreshRecords)="updateTable($event)"></app-addcustomer>
+<div></div>
+<app-customer-table></app-customer-table>
+<div class="example-container">
+    <app-edit-customer-table (editEmitter)="updateTable($event)" [UpdateData]="updateCustomerTable"></app-edit-customer-table>
+</div>
+
+
+

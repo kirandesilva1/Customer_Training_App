@@ -1,0 +1,20 @@
+<table class=".table-fixed">
+    <tr>
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>Name</th>
+        <th>Street Name</th>
+        <th>Zip Code</th>
+    </tr>
+<ng-container *ngFor = "let customer of customers"> 
+    <tr>
+        <td>
+            <a routerLink="." type="button" mat-button mat-raised-button color="primary" (click)="openCustomerEditModal(customer)">Edit</a>
+        </td>
+        <td><button mat-button mat-raised-button color="warn" (click)="deleteCustomer(customer)">Delete</button></td>
+        <td>{{customer.name}}</td>
+        <td>{{customer.address?.streetname}}</td>
+        <td>{{customer.address?.zipcode}}</td>
+    </tr>
+</ng-container>
+</table>

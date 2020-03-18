@@ -1,0 +1,70 @@
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/web.config
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/appsettings.json
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/Properties/launchSettings.json
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/WebApp/customer-app/angular.json
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/WebApp/customer-app/e2e/tsconfig.json
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/WebApp/customer-app/package-lock.json
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/WebApp/customer-app/package.json
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/WebApp/customer-app/tsconfig.app.json
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/WebApp/customer-app/tsconfig.json
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/WebApp/customer-app/tsconfig.spec.json
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/WebApp/customer-app/tslint.json
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/WebApp/package-lock.json
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/IO.Swagger.UnitTests.deps.json
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/IO.Swagger.UnitTests.runtimeconfig.json
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/IO.Swagger.UnitTests.runtimeconfig.dev.json
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/IO.Swagger.UnitTests.dll
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/IO.Swagger.UnitTests.pdb
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/IO.Swagger.dll
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/IO.Swagger.pdb
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/IO.Swagger.xml
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/obj/Debug/netcoreapp2.2/IO.Swagger.UnitTests.csprojAssemblyReference.cache
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/obj/Debug/netcoreapp2.2/IO.Swagger.UnitTests.AssemblyInfoInputs.cache
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/obj/Debug/netcoreapp2.2/IO.Swagger.UnitTests.AssemblyInfo.cs
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/obj/Debug/netcoreapp2.2/IO.Swagger.UnitTests.csproj.CopyComplete
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/obj/Debug/netcoreapp2.2/IO.Swagger.UnitTests.dll
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/obj/Debug/netcoreapp2.2/IO.Swagger.UnitTests.pdb
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/xunit.runner.utility.netstandard15.dll
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/xunit.runner.reporters.netstandard15.dll
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/obj/Debug/netcoreapp2.2/IO.Swagger.UnitTests.RazorAssemblyInfo.cache
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/obj/Debug/netcoreapp2.2/IO.Swagger.UnitTests.RazorAssemblyInfo.cs
+/Users/dks0488411/Downloads/aspnetcore-server 2/IO.Swagger.UnitTests/obj/Debug/netcoreapp2.2/IO.Swagger.UnitTests.RazorTargetAssemblyInfo.cache
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/web.config
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/appsettings.json
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/Properties/launchSettings.json
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/WebApp/customer-app/angular.json
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/WebApp/customer-app/e2e/tsconfig.json
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/WebApp/customer-app/package-lock.json
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/WebApp/customer-app/package.json
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/WebApp/customer-app/tsconfig.app.json
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/WebApp/customer-app/tsconfig.json
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/WebApp/customer-app/tsconfig.spec.json
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/WebApp/customer-app/tslint.json
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/WebApp/package-lock.json
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/xunit.runner.utility.netstandard15.dll
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/xunit.runner.reporters.netstandard15.dll
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/IO.Swagger.UnitTests.deps.json
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/IO.Swagger.UnitTests.runtimeconfig.json
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/IO.Swagger.UnitTests.runtimeconfig.dev.json
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/IO.Swagger.UnitTests.dll
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/IO.Swagger.UnitTests.pdb
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/IO.Swagger.dll
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/IO.Swagger.pdb
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/bin/Debug/netcoreapp2.2/IO.Swagger.xml
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/obj/Debug/netcoreapp2.2/IO.Swagger.UnitTests.csprojAssemblyReference.cache
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/obj/Debug/netcoreapp2.2/IO.Swagger.UnitTests.RazorAssemblyInfo.cache
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/obj/Debug/netcoreapp2.2/IO.Swagger.UnitTests.RazorAssemblyInfo.cs
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/obj/Debug/netcoreapp2.2/IO.Swagger.UnitTests.AssemblyInfoInputs.cache
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/obj/Debug/netcoreapp2.2/IO.Swagger.UnitTests.AssemblyInfo.cs
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/obj/Debug/netcoreapp2.2/IO.Swagger.UnitTests.RazorTargetAssemblyInfo.cache
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/obj/Debug/netcoreapp2.2/IO.Swagger.UnitTests.csproj.CopyComplete
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/obj/Debug/netcoreapp2.2/IO.Swagger.UnitTests.dll
+/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/obj/Debug/netcoreapp2.2/IO.Swagger.UnitTests.pdb

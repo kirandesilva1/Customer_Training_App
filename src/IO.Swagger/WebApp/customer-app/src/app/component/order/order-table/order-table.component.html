@@ -1,0 +1,38 @@
+<br>
+<label><b>ORDERS</b></label>
+<table mat-table [dataSource]="dataSource[0]">
+    <!--Column Definitions-->
+    <ng-container  matColumnDef="orderId">
+        <th mat-header-cell *matHeaderCellDef>Id</th>
+        <td mat-cell *matCellDef="let order">{{order.orderId}}</td>
+    </ng-container>
+    <ng-container  matColumnDef="customer">
+        <th mat-header-cell *matHeaderCellDef>Customer</th>
+        <td mat-cell *matCellDef="let customer">
+            {{customer.customer.name}}
+            <br>
+            {{customer.customer.customerId}}
+        </td>
+        
+    </ng-container>
+    <ng-container  matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef>Description</th>
+        <td mat-cell *matCellDef="let order">{{order.description}}</td>
+    </ng-container>
+    <ng-container  matColumnDef="shipAddress">
+        <th mat-header-cell *matHeaderCellDef>Ship Address</th>
+        <td mat-cell *matCellDef="let order">
+            {{order.shipaddress.streetname}} 
+            <br>
+            {{order.shipaddress.zipcode}}
+        </td>
+    </ng-container>
+    <ng-container  matColumnDef="orderItems">
+        <th mat-header-cell *matHeaderCellDef>Order Items</th>
+                <td mat-cell *matCellDef="let orderItems">
+                    <app-order-items [items]="orderItems"></app-order-items>
+                </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="tableColumns"></tr> <!--TABLE HEADER ROW-->
+    <tr mat-row *matRowDef="let row; columns: tableColumns"></tr>
+</table>

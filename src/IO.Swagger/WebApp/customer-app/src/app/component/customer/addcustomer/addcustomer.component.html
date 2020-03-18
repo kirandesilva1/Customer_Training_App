@@ -1,0 +1,38 @@
+
+    <form [formGroup]="customerForm" (ngSubmit)="saveEvent()" >
+        <div class="tab-container">
+            <div class="row">
+                <div class="col-4">
+                    <label>
+                        <input type="text" placeholder="Name" formControlName="name" required>
+                    </label>
+                </div>
+                <div class="col-4">
+                    <input type="text" placeholder="Enter Group Id" formControlName="groupid">
+                </div>
+                <div class="col-4">
+                    <input type="text" placeholder="Enter Number of Orders" formControlName="numberoforders">
+                </div>
+                <div formGroupName="address" class="example-form">
+                    <div class="col-4">
+                        <input type="text" placeholder="Enter street name" formControlName="streetname" required>
+                    </div>
+                    <div class="col-4">
+                        <input type="text" placeholder="Enter Zip Code" formControlName="zipcode" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--</mat-tab-group>-->
+        <button
+                type="submit"
+                mat-button mat-raised-button
+                color="primary">
+            Save
+        </button>
+    </form>
+    <div class="w-100 row m-0">
+    <div class="col p-0">
+    
+    </div>
+    </div>
