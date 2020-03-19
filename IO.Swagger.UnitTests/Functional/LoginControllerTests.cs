@@ -68,6 +68,7 @@ namespace IO.Swagger.UnitTests.Functional
             Assert.Equal(HttpStatusCode.BadRequest,loginResponse.StatusCode);
         }
         
+        
         [Fact]
         public async Task Should_Let_User_With_Valid_Credentials_To_Login()
         {

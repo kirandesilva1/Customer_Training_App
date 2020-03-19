@@ -14646,17 +14646,17 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/IO.Swagger.UnitTests.csproj",
+      "projectUniqueName": "/Users/dks0488411/Training-App/IO.Swagger.UnitTests/IO.Swagger.UnitTests.csproj",
       "projectName": "IO.Swagger.UnitTests",
-      "projectPath": "/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/IO.Swagger.UnitTests.csproj",
+      "projectPath": "/Users/dks0488411/Training-App/IO.Swagger.UnitTests/IO.Swagger.UnitTests.csproj",
       "packagesPath": "/Users/dks0488411/.nuget/packages/",
-      "outputPath": "/Users/dks0488411/Downloads/aspnetcore-server2/IO.Swagger.UnitTests/obj/",
+      "outputPath": "/Users/dks0488411/Training-App/IO.Swagger.UnitTests/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/dks0488411/Downloads/aspnetcore-server2/NuGet.Config",
+        "/Users/dks0488411/Training-App/NuGet.Config",
         "/Users/dks0488411/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
@@ -14669,8 +14669,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "/Users/dks0488411/Downloads/aspnetcore-server2/src/IO.Swagger/IO.Swagger.csproj": {
-              "projectPath": "/Users/dks0488411/Downloads/aspnetcore-server2/src/IO.Swagger/IO.Swagger.csproj"
+            "/Users/dks0488411/Training-App/src/IO.Swagger/IO.Swagger.csproj": {
+              "projectPath": "/Users/dks0488411/Training-App/src/IO.Swagger/IO.Swagger.csproj"
             }
           }
         }
