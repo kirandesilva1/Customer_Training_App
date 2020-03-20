@@ -6,12 +6,35 @@ namespace IO.Swagger.Models
 {
     public partial class User : EntityBase
     {
+        
+        /// <summary>
+        /// Gets or Sets Id
+        /// </summary>
+        [DataMember(Name="userId")]
+        public string UserId { get; set; }
+        
         /// <summary>
         /// Gets or Sets User Name
         /// </summary>
         [Required]
         [DataMember(Name="username")]
         public string Username { get; set; }
+        
+        [Required]
+        [DataMember(Name="firstname")]
+        public string Firstname { get; set; }
+        
+        [Required]
+        [DataMember(Name="lastname")]
+        public string Lastname { get; set; }
+        
+        [Required]
+        [DataMember(Name="emailaddress")]
+        public string Emailaddress { get; set; }
+        
+        [Required]
+        [DataMember(Name="phonenumber")]
+        public string Phonenumber { get; set; }
         
         /// <summary>
         /// Gets or Sets Password

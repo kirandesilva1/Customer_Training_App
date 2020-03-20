@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using IO.Swagger.Data;
 using IO.Swagger.Helpers;
 using IO.Swagger.Models;
 using Microsoft.Extensions.Options;
@@ -13,10 +14,12 @@ namespace IO.Swagger.Services
     public class LoginService : ILoginService
     {
         private readonly AppSettings _appSettings;
+        private readonly IRepository<User> _userRepository;
         
-        public LoginService(IOptions<AppSettings> appSettings)
+        public LoginService(IOptions<AppSettings> appSettings,IRepository<User> userRepository)
         {
             _appSettings = appSettings.Value;
+            _userRepository = userRepository;
         }
         
         public User GetUser(string Username, string Password)
@@ -45,6 +48,12 @@ namespace IO.Swagger.Services
             user = SetToken(user);
             return user;
 
+        }
+
+        public void CreateUser(User user)
+        {
+            SetToken(user);
+            _userRepository.Create(user);
         }
 
         private User SetToken(User user)

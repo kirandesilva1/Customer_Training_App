@@ -52,5 +52,30 @@ namespace IO.Swagger.Controllers
                 return BadRequest("Invalid username or password ");
             }
         }
+        
+        
+        /// <summary>
+        /// Create User
+        /// </summary>
+        /// <remarks>This is used to create a user</remarks>
+        /// <param name="body"></param>
+        /// <response code="0">successful operation</response>
+        [HttpPost]
+        [Route("/v1/create")]
+        [ValidateModelState]
+        [SwaggerOperation("Create")]
+        [SwaggerResponse(statusCode: 200, type: typeof(string), description: "successful operation")]
+        public virtual IActionResult Create([FromBody] User body)
+        {
+            try
+            {
+                loginManager.CreateLogin(body);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Invalid user");
+            }
+        }
     }
 }

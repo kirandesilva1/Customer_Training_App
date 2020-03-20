@@ -5,5 +5,7 @@ namespace IO.Swagger.BusinessLayer
     public interface ILoginManager
     {
         User Authenticate(string Username, string Password);
+
+        void CreateLogin(User user);
     }
 }

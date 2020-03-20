@@ -16,5 +16,10 @@ namespace IO.Swagger.BusinessLayer
         {
           return  _loginService.Authenticate(Username, Password);
         }
+
+        public void CreateLogin(User user)
+        {
+            _loginService.CreateUser(user);
+        }
     }
 }

@@ -8,5 +8,7 @@ namespace IO.Swagger.Services
         User GetUser(string Username, string Password);
         
         User Authenticate(string Username, string Password);
+
+        void CreateUser(User user);
     }
 }

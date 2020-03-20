@@ -84,6 +84,27 @@ namespace IO.Swagger.UnitTests.Functional
             
             Assert.Equal(HttpStatusCode.OK,loginResponse.StatusCode);
         }
+
+
+        [Fact]
+        public async Task Should_Create_A_User()
+        {
+            var client = _factory.CreateClient();
+            
+            User user = new User();
+            user.Emailaddress = "Test123@yahoo.com";
+            user.Firstname = "Tom";
+            user.Lastname = "Thumb";
+            user.Password = "Password@12345";
+            user.Token = "TokenTest";
+            
+            string JSON = JsonConvert.SerializeObject(user);
+            var httpContent = new StringContent(JSON, Encoding.UTF8, "application/json");
+            var loginResponse = await client.PostAsync("/v1/create", httpContent);
+            
+            Assert.Equal(HttpStatusCode.OK,loginResponse.StatusCode);
+
+        }
         
     }
 }
