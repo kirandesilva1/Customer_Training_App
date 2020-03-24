@@ -1,3 +1,4 @@
+using System;
 using System.Net;
 using System.Net.Http;
 using System.Text;
@@ -17,6 +18,21 @@ namespace IO.Swagger.UnitTests.Functional
         {
             _factory = factory;
         }
+        
+        public string RandomString(int size, bool lowerCase)  
+        {  
+            StringBuilder builder = new StringBuilder();  
+            Random random = new Random();  
+            char ch;  
+            for (int i = 0; i < size; i++)  
+            {  
+                ch = Convert.ToChar(Convert.ToInt32(Math.Floor(26 * random.NextDouble() + 65)));  
+                builder.Append(ch);  
+            }  
+            if (lowerCase)  
+                return builder.ToString().ToLower();  
+            return builder.ToString();  
+        }  
 
         [Fact]
         public async Task Should_Not_Permit_User_To_Login_With_Only_UserName()
@@ -74,11 +90,31 @@ namespace IO.Swagger.UnitTests.Functional
         {
             var client = _factory.CreateClient();
             
-            User login = new User();
-            login.Username = "Kiran1";
-            login.Password = "Password@123";
+            string randomUser = "User" + this.RandomString(5,true);
+            string randomEmail = "Test" + this.RandomString(6,true) + "@yahoo.com";
+            string randomPassword = "Password@" + this.RandomString(9,true);
+            
+            // Create random user
+            User user = new User();
+            user.Username = randomUser;
+            user.Emailaddress = randomEmail;
+            user.Firstname = "Tom";
+            user.Lastname = "Thumb";
+            user.Password = randomPassword;
+            user.Token = "TokenTest";
+            user.Phonenumber = "412-567-8900";
+            
+            string userJSON = JsonConvert.SerializeObject(user);
+            var createHttpContent = new StringContent(userJSON, Encoding.UTF8, "application/json");
+            var createUserResponse = await client.PostAsync("/v1/create", createHttpContent);
+            
+            Assert.Equal(HttpStatusCode.OK,createUserResponse.StatusCode);
+            
+            Login loginUser = new Login();
+            loginUser.Username = randomUser;
+            loginUser.Password = randomPassword;
 
-            string JSON = JsonConvert.SerializeObject(login);
+            string JSON = JsonConvert.SerializeObject(loginUser);
             var httpContent = new StringContent(JSON, Encoding.UTF8, "application/json");
             var loginResponse = await client.PostAsync("/v1/login", httpContent);
             
@@ -92,11 +128,13 @@ namespace IO.Swagger.UnitTests.Functional
             var client = _factory.CreateClient();
             
             User user = new User();
-            user.Emailaddress = "Test123@yahoo.com";
+            user.Username = "User" + this.RandomString(5,true);
+            user.Emailaddress = "Test" + this.RandomString(6,true) + "@yahoo.com";
             user.Firstname = "Tom";
             user.Lastname = "Thumb";
-            user.Password = "Password@12345";
+            user.Password = "Password@" + this.RandomString(9,true);
             user.Token = "TokenTest";
+            user.Phonenumber = "412-567-8900";
             
             string JSON = JsonConvert.SerializeObject(user);
             var httpContent = new StringContent(JSON, Encoding.UTF8, "application/json");
@@ -105,6 +143,9 @@ namespace IO.Swagger.UnitTests.Functional
             Assert.Equal(HttpStatusCode.OK,loginResponse.StatusCode);
 
         }
+        
+        
+        
         
     }
 }

@@ -32,7 +32,7 @@ namespace IO.Swagger.Controllers
         [ValidateModelState]
         [SwaggerOperation("Authenticate")]
         [SwaggerResponse(statusCode: 200, type: typeof(string), description: "successful operation")]
-        public virtual IActionResult Authenticate([FromBody] User body)
+        public virtual IActionResult Authenticate([FromBody] Login body)
         {
             try
             {

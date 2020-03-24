@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using IO.Swagger.Data;
@@ -24,18 +25,7 @@ namespace IO.Swagger.Services
         
         public User GetUser(string Username, string Password)
         {
-            List<User> users = new List<User>
-            {
-                new User
-                {
-                    Id = new System.Guid(),
-                    Username = "Kiran1",
-                    Password = "Password@123"
-                }
-            };
-
-            return users.Find(x => x.Username == Username && x.Password == Password);
-
+            return  _userRepository.Query(x => x.Username == Username && x.Password == Password).First();
         }
 
         public User Authenticate(string Username, string Password)
@@ -52,7 +42,7 @@ namespace IO.Swagger.Services
 
         public void CreateUser(User user)
         {
-            SetToken(user);
+            //SetToken(user);
             _userRepository.Create(user);
         }
 
