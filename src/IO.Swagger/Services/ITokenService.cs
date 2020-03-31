@@ -1,13 +1,24 @@
 using System;
+using System.Collections.Generic;
+using System.Security.Claims;
+using IO.Swagger.Models;
 using Microsoft.IdentityModel.Tokens;
 
 namespace IO.Swagger.Services
 {
     public interface ITokenService
     {
-        //SecurityToken Get(); 
-        SecurityToken Create(string tokenStr, DateTime expirationDate);
+        string secretKey { get; set; }
+        
         //void Delete();
-        //Save();
+        void SaveToken(Token token);
+        
+        bool IsValidToken(string tokenStr);
+
+        string GenerateToken(Token token);
+
+        IEnumerable<Claim> GetTokenClaims(string token);
+
+
     }
 }

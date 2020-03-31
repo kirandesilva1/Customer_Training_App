@@ -101,7 +101,7 @@ namespace IO.Swagger.UnitTests.Functional
             user.Firstname = "Tom";
             user.Lastname = "Thumb";
             user.Password = randomPassword;
-            user.Token = "TokenTest";
+            //user.Token = "TokenTest";
             user.Phonenumber = "412-567-8900";
             
             string userJSON = JsonConvert.SerializeObject(user);
@@ -133,7 +133,7 @@ namespace IO.Swagger.UnitTests.Functional
             user.Firstname = "Tom";
             user.Lastname = "Thumb";
             user.Password = "Password@" + this.RandomString(9,true);
-            user.Token = "TokenTest";
+            //user.Token = "TokenTest";
             user.Phonenumber = "412-567-8900";
             
             string JSON = JsonConvert.SerializeObject(user);
@@ -143,8 +143,39 @@ namespace IO.Swagger.UnitTests.Functional
             Assert.Equal(HttpStatusCode.OK,loginResponse.StatusCode);
 
         }
-        
-        
+
+        [Fact]
+        public async Task Should_Create_User_With_Token()
+        {
+            var client = _factory.CreateClient();
+            
+            User user = new User();
+            user.Username = "User" + this.RandomString(5,true);
+            user.Emailaddress = "Test" + this.RandomString(6,true) + "@yahoo.com";
+            user.Firstname = "Tom";
+            user.Lastname = "TokenTest";
+            user.Password = "Password@" + this.RandomString(9,true);
+            user.Phonenumber = "412-567-8900";
+            
+            string JSON = JsonConvert.SerializeObject(user);
+            var httpContent = new StringContent(JSON, Encoding.UTF8, "application/json");
+            var createLoginResponse = await client.PostAsync("/v1/create", httpContent);
+            
+            Assert.Equal(HttpStatusCode.OK,createLoginResponse.StatusCode);
+            
+            
+            Login loginUser = new Login();
+            loginUser.Username = user.Username;
+            loginUser.Password = user.Password;
+
+            string loginJSON = JsonConvert.SerializeObject(loginUser);
+            
+            var loginHttpContent = new StringContent(JSON, Encoding.UTF8, "application/json");
+            var loginResponse = await client.PostAsync("/v1/login", httpContent);
+            
+            Assert.Equal(HttpStatusCode.OK,loginResponse.StatusCode);
+            
+        }
         
         
     }

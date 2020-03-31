@@ -112,14 +112,16 @@ namespace IO.Swagger
             // ADD C# CUSTOM SERVICES
             services
                 .AddTransient<ICustomerService, CustomerService>()
-                .AddTransient<IOrderService, OrderService>();
+                .AddTransient<IOrderService, OrderService>()
+                .AddTransient<ILoginService, LoginService>()
+                .AddTransient<ITokenService, TokenService>();
 
             // ADD REPOSITORY ACCESS
             var connectionString = "mongodb://localhost:27017";
             services.AddSingleton<IRepository<Customer>>(repo => new CustomerRepository(connectionString));
             services.AddSingleton<IRepository<Order>>(repo => new OrderRepository(connectionString));
             services.AddSingleton<IRepository<User>>(repo => new UserRepository(connectionString));
-            
+            services.AddSingleton<IRepository<Token>>(repo => new TokenRepository(connectionString));
             ///---JWT
             
             // configure strongly typed settings objects

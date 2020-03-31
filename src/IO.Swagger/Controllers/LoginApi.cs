@@ -1,9 +1,11 @@
 using System;
 using IO.Swagger.Attributes;
 using IO.Swagger.BusinessLayer;
+using IO.Swagger.Helpers;
 using IO.Swagger.Models;
 using IO.Swagger.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace IO.Swagger.Controllers
@@ -12,12 +14,17 @@ namespace IO.Swagger.Controllers
     public class LoginApiController: ControllerBase
     {
         private readonly ILoginService _loginService;
+        private readonly ITokenService _tokenService;
+        private readonly AppSettings _appSettings;
+        
         private LoginManager loginManager; 
         
-        public LoginApiController(ILoginService loginService)
+        public LoginApiController(IOptions<AppSettings> appSettings ,ILoginService loginService, ITokenService tokenService)
         {
             _loginService = loginService;
-            loginManager = new LoginManager(_loginService);
+            _tokenService = tokenService;
+            _appSettings = appSettings.Value;
+            loginManager = new LoginManager(_appSettings,_loginService, _tokenService);
             
         }
         

@@ -5,7 +5,7 @@ using Entities;
 
 namespace IO.Swagger.Data
 {
-    public interface IRepository<T> : IDisposable where T: EntityBase
+    public interface IRepository<T> : IDisposable
     {
         T GetById(Guid id);
 

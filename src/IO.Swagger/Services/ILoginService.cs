@@ -10,5 +10,7 @@ namespace IO.Swagger.Services
         User Authenticate(string Username, string Password);
 
         void CreateUser(User user);
+
+        void UpdateUser(User user);
     }
 }

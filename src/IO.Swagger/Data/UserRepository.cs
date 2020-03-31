@@ -46,7 +46,14 @@ namespace IO.Swagger.Data
 
         public void Update(User entity)
         {
-            throw new NotImplementedException();
+            var ud = Builders<User>.Update.Set("Emailaddress", entity.Emailaddress)
+                .Set("Firstname", entity.Firstname)
+                .Set("Lastname", entity.Lastname)
+                .Set("Password", entity.Password)
+                .Set("Phonenumber", entity.Phonenumber)
+                .Set("Token", entity.Token)
+                .Set("Username", entity.Username);
+            _dbCollection.UpdateOneAsync(x => x.Id == entity.Id, ud);  
         }
 
         public IEnumerable<User> Query(Expression<Func<User, bool>> expression)

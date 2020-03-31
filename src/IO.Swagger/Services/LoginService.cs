@@ -35,7 +35,7 @@ namespace IO.Swagger.Services
             if (user == null)
                 return null;
 
-            user = SetToken(user);
+            //user = SetToken(user);
             return user;
 
         }
@@ -46,26 +46,31 @@ namespace IO.Swagger.Services
             _userRepository.Create(user);
         }
 
-        private User SetToken(User user)
+        public void UpdateUser(User user)
         {
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
-            var tokenDescriptor = new SecurityTokenDescriptor
-            {
-                Subject = new ClaimsIdentity(new Claim[] 
-                {
-                    new Claim(ClaimTypes.Name, user.Id.ToString())
-                }),
-                Expires = DateTime.UtcNow.AddDays(7),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
-            };
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            user.Token = tokenHandler.WriteToken(token);
-            
-            user.Password = null;
-
-            return user;
+            _userRepository.Update(user);
         }
+
+        // private User SetToken(User user)
+        // {
+        //     var tokenHandler = new JwtSecurityTokenHandler();
+        //     var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+        //     var tokenDescriptor = new SecurityTokenDescriptor
+        //     {
+        //         Subject = new ClaimsIdentity(new Claim[] 
+        //         {
+        //             new Claim(ClaimTypes.Name, user.Id.ToString())
+        //         }),
+        //         Expires = DateTime.UtcNow.AddDays(7),
+        //         SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+        //     };
+        //     var token = tokenHandler.CreateToken(tokenDescriptor);
+        //     user.Token = tokenHandler.WriteToken(token);
+        //     
+        //     user.Password = null;
+        //
+        //     return user;
+        // }
         
     }
 }
