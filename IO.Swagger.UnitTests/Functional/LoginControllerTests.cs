@@ -176,7 +176,55 @@ namespace IO.Swagger.UnitTests.Functional
             Assert.Equal(HttpStatusCode.OK,loginResponse.StatusCode);
             
         }
-        
-        
+
+        [Fact]
+        public async Task Should_Check_Users_Token()
+        {
+            
+            // CREATE USER
+            var client = _factory.CreateClient();
+            
+            User user = new User();
+            user.Username = "User" + this.RandomString(5,true);
+            user.Emailaddress = "Test" + this.RandomString(6,true) + "@yahoo.com";
+            user.Firstname = "Tom";
+            user.Lastname = "TokenTest";
+            user.Password = "Password@" + this.RandomString(9,true);
+            user.Phonenumber = "412-567-8900";
+            
+            string JSON = JsonConvert.SerializeObject(user);
+            var httpContent = new StringContent(JSON, Encoding.UTF8, "application/json");
+            var createLoginResponse = await client.PostAsync("/v1/create", httpContent);
+            
+            Assert.Equal(HttpStatusCode.OK,createLoginResponse.StatusCode);
+            
+            // LOGIN USER
+            Login loginUser = new Login();
+            loginUser.Username = user.Username;
+            loginUser.Password = user.Password;
+
+            string loginJSON = JsonConvert.SerializeObject(loginUser);
+            
+            var loginHttpContent = new StringContent(JSON, Encoding.UTF8, "application/json");
+            var loginResponse = await client.PostAsync("/v1/login", httpContent);
+            
+            Assert.Equal(HttpStatusCode.OK,loginResponse.StatusCode);
+            
+            // LOGIN A SECOND TIME
+            Login loginUser1 = new Login();
+            loginUser1.Username = user.Username;
+            loginUser1.Password = user.Password;
+
+            string login1JSON = JsonConvert.SerializeObject(loginUser);
+            
+            var login1HttpContent = new StringContent(JSON, Encoding.UTF8, "application/json");
+            var login1Response = await client.PostAsync("/v1/login", httpContent);
+            
+            
+            
+        }
+
+
+
     }
 }

@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Security.Claims;
 using IO.Swagger.Helpers;
 using IO.Swagger.Models;
@@ -24,7 +27,47 @@ namespace IO.Swagger.BusinessLayer
         {
             User user = _loginService.Authenticate(Username, Password);
 
-            //Load token parameters
+            if (user.Token is null)
+            {
+                UpdateUserToken(user);
+            }
+            else
+            {
+                if (!_tokenService.IsValidToken(user.Token)) return user;
+                if (IsTokenExpired(user))
+                {
+                    UpdateUserToken(user);
+                }
+            }
+
+            return user;
+        }
+
+        private void UpdateUserToken(User user)
+        {
+            Token tempToken = LoadToken(user);
+            user.Token = _tokenService.GenerateToken(tempToken);
+            _tokenService.SaveToken(tempToken);
+            _loginService.UpdateUser(user);
+        }
+
+        private bool IsTokenExpired(User user)
+        {
+            List<Claim> tokenClaims = _tokenService.GetTokenClaims(user.Token).ToList();
+
+            DateTime parsedDate =
+                DateTime.Parse(tokenClaims.FirstOrDefault(e => e.Type.Equals(ClaimTypes.Expiration)).Value);
+
+            if (parsedDate > DateTime.Today.Date)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        private Token LoadToken(User user)
+        {
             Token token = new Token();
             token.ExpireMinutes = 1440; //TODO: Move to appsettings file
             token.SecretKey = _appSettings.Secret;
@@ -33,15 +76,11 @@ namespace IO.Swagger.BusinessLayer
             {
                 new Claim(ClaimTypes.Email, user.Emailaddress),
                 new Claim(ClaimTypes.Name, user.Username),
+                new Claim(ClaimTypes.Expiration,
+                    DateTime.UtcNow.Add(TimeSpan.FromMinutes(token.ExpireMinutes)).ToString())
             };
 
-            user.Token = _tokenService.GenerateToken(token);
-
-            _tokenService.SaveToken(token);
-            
-            _loginService.UpdateUser(user);
-
-            return user;
+            return token;
         }
 
         public void CreateLogin(User user)
