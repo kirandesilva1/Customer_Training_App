@@ -18,7 +18,7 @@ namespace IO.Swagger.Models
     /// 
     /// </summary>
     [DataContract]
-    public partial class Order : EntityBase, IEquatable<Order>
+    public partial class Order : EntityBase, IEquatable<Order>, IOrder
     { 
         /// <summary>
         /// Gets or Sets Id

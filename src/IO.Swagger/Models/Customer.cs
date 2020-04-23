@@ -17,7 +17,7 @@ namespace IO.Swagger.Models
     /// 
     /// </summary>
     [DataContract]
-    public partial class Customer : EntityBase, IEquatable<Customer> //, IValidatableObject
+    public partial class Customer : EntityBase, IEquatable<Customer> , ICustomer//, IValidatableObject
     { 
         /// <summary>
         /// Gets or Sets Id

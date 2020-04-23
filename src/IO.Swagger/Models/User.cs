@@ -4,9 +4,8 @@ using Entities;
 
 namespace IO.Swagger.Models
 {
-    public partial class User : EntityBase
+    public partial class User : EntityBase, IUser
     {
-        
         /// <summary>
         /// Gets or Sets Id
         /// </summary>

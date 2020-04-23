@@ -6,7 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace IO.Swagger.Models
 {
-    public class Token : EntityBase
+    public class Token : EntityBase, IToken
     {
         /// <summary>
         /// Gets or Sets Secret Key

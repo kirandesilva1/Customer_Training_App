@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace IO.Swagger.Models
 {
-    public class OrderItem
+    public class OrderItem : IOrderItem
     {
         
         /// <summary>

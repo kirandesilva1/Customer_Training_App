@@ -2,7 +2,7 @@ using System.Runtime.Serialization;
 
 namespace IO.Swagger.Models
 {
-    public class BillingInfo
+    public class BillingInfo : IBillingInfo
     {
         [DataMember(Name="billinginfoId")]
         public string BillinginfoId { get; set; }

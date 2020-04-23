@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 
 namespace IO.Swagger.Models
 {
-    public class Login
+    public class Login : ILogin
     {
         [Required]
         [DataMember(Name="username")]
