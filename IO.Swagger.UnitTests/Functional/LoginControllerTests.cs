@@ -210,6 +210,8 @@ namespace IO.Swagger.UnitTests.Functional
             
             Assert.Equal(HttpStatusCode.OK,loginResponse.StatusCode);
             
+            //TODO: Need logout function
+            
             // LOGIN A SECOND TIME
             Login loginUser1 = new Login();
             loginUser1.Username = user.Username;
