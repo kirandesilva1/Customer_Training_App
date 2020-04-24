@@ -114,7 +114,7 @@ namespace IO.Swagger.Controllers
         public virtual IActionResult GetCustomerInfo([FromRoute] [Required] string customerid)
         {
             Customer customer = customerManager.GetCustomerProfile(customerid);
-
+            
             if (customer == null)
                 return BadRequest("Customer with Id " + customerid + " does not exist");
             

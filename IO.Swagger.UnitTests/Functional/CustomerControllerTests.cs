@@ -50,7 +50,7 @@ namespace IO.Swagger.UnitTests.Functional
             var client = _factory.CreateClient();
 
             // Act
-            var response = await client.GetAsync("/v1/order");
+            var response = await client.GetAsync("/v1/orders");
 
             // Assert
             response.EnsureSuccessStatusCode(); // Status Code 200-299

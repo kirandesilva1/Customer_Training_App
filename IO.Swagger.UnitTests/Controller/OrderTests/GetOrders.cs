@@ -10,7 +10,7 @@ using Moq;
 namespace IO.Swagger.UnitTests.Controller.OrderTests
 {
     [TestClass]
-    public class Get
+    public class GetOrders
     {
         [TestMethod]
         public void Should_Get_Orders_And_Return_Success_Status_Code()
@@ -18,7 +18,7 @@ namespace IO.Swagger.UnitTests.Controller.OrderTests
             // Arrange
             Mock<IOrderService> mockOrderService = new Mock<IOrderService>();
             mockOrderService.Setup(o => o.GetOrders())
-                .Returns(It.IsAny<IEnumerable<Order>>());
+                .Returns(new List<Order>(){ new Order()});
             OrderApiController controller = new OrderApiController(mockOrderService.Object);
             
             // Act

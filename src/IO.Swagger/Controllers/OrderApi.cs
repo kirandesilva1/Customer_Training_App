@@ -153,13 +153,13 @@ namespace IO.Swagger.Controllers
         }
 
         /// <summary>
-        /// Get Orders
+        /// Get Orders 
         /// </summary>
 
         /// <response code="404">Orders not found</response>
         /// <response code="405">Validation exception</response>
         [HttpGet]
-        [Route("/v1/order")]
+        [Route("/v1/orders")]
         [SwaggerOperation("GetOrders")]
         [SwaggerResponse(statusCode: 200, type: typeof(IEnumerable<Order>), description: "successful operation")]
         public virtual IActionResult GetOrders()
