@@ -165,13 +165,14 @@ namespace IO.Swagger.Controllers
         public virtual IActionResult GetOrders()
         {
             (HttpStatusCode statusCode , IEnumerable<Order> orders)= _orderManager.GetOrders();
-            return StatusCode((int)statusCode, orders);
+            return Ok (orders);
         }
 
 
         /// <summary>
         ///  Get Order
         /// </summary>
+        /// <response code="404">Order not found</response>
         /// <param name="orderid"></param>
         /// <returns></returns>
         [HttpGet]
@@ -180,9 +181,12 @@ namespace IO.Swagger.Controllers
         [SwaggerResponse(statusCode: 200, type: typeof(Order), description: "successful operation")]
         public virtual IActionResult GetOrder([FromRoute] [Required] string orderid)
         {
-            (HttpStatusCode statusCode , Order order) = _orderManager.GetOrder(orderid);
-            return StatusCode((int)statusCode, order);
-            
+            Order order = _orderManager.GetOrder(orderid);
+
+            if (order == null)
+                return BadRequest("Order with Id " +  orderid + " does not exist");
+
+            return Ok(order);
         }
 
         /// <summary>

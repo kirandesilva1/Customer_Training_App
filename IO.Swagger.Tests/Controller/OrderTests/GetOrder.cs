@@ -17,10 +17,10 @@ namespace IO.Swagger.UnitTests.Controller.OrderTests
         {
             // Arrange
             Guid _guid = Guid.NewGuid();
-            Order order = new Order(){ Id = _guid, Description = "Order Description"};
+            Order order = new Order(){ Id = _guid, OrderId = "testid-" + _guid, Description = "Order Description"};
             
             Mock<IOrderService> mockOrderService = new Mock<IOrderService>();
-            mockOrderService.Setup(o => o.GetOrder(It.IsAny<String>()))
+            mockOrderService.Setup(o => o.GetOrder(It.IsAny<string>()))
                 .Returns(order);
             OrderApiController controller = new OrderApiController(mockOrderService.Object);
             

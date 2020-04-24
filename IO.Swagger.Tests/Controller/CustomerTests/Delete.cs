@@ -39,7 +39,7 @@ namespace IO.Swagger.UnitTests.Controller
         [TestMethod]
         public void Should_NOT_Delete_NonExistent_Customer_Return_Correct_StatusCode()
         {
-            // Arrange
+            // ARRANGE
             Guid _guid = Guid.NewGuid();
             Customer nonExistentCustomer = null;
             
@@ -50,13 +50,12 @@ namespace IO.Swagger.UnitTests.Controller
             
             CustomerApiController controller = new CustomerApiController(mockCustomerService.Object, mockOrderService.Object);
             
-            // Act
+            // ACT
             var result = controller.DeleteCustomer(_guid.ToString());
-            var checkResult = result as StatusCodeResult;
+            var checkResult = result as BadRequestObjectResult;
             
-            // Assert
-            Assert.IsNotNull(checkResult);
-            Assert.AreEqual(404, checkResult.StatusCode);
+            // ASSERT
+            Assert.AreEqual(400, checkResult.StatusCode);
         }
         
         

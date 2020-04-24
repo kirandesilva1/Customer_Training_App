@@ -16,6 +16,8 @@ namespace IO.Swagger.BusinessLayer
             _orderService = orderService;
         }
 
+        // TODO: Order Manager should not be returning HttpStatusCode and Result this should be in the controller 
+        // Separation of concerns issue
         public (HttpStatusCode, IEnumerable<Order>) GetOrders()
         {
             HttpStatusCode statusCodeResult;
@@ -38,25 +40,15 @@ namespace IO.Swagger.BusinessLayer
 
         }
 
-        public (HttpStatusCode, Order order) GetOrder(string orderId)
+        public Order GetOrder(string orderId)
         {
             Order _order = _orderService.GetOrder(orderId);
             
-            HttpStatusCode statusCodeResult;
-            string message;
-
-            if (_order.OrderId == null)
-            {
-                statusCodeResult = HttpStatusCode.Forbidden;
-            }
-            else
-            {
-                statusCodeResult = HttpStatusCode.OK;
-            }
-
-            return  (statusCodeResult,  _order);
+            return  _order;
         }
 
+        // TODO: Order Manager should not be returning HttpStatusCode and Result this should be in the controller 
+        // Separation of concerns issue
         public (HttpStatusCode, string Message) ShipOrder(string orderId)
         {
             Order _order = _orderService.GetOrder(orderId);

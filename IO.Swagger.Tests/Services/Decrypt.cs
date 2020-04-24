@@ -7,7 +7,7 @@ namespace IO.Swagger.UnitTests.Services
     [TestClass]
     public class Decrypt
     {
-        [TestMethod]
+        /*[TestMethod]
         public void Should_Decrypt_Data()
         {
             string plainText = "Hide this text";
@@ -16,7 +16,7 @@ namespace IO.Swagger.UnitTests.Services
 
             Assert.Equals(plainText,cryptoService.Decrypt(cipherText));
 
-        }
+        }*/
         
     }
 }
