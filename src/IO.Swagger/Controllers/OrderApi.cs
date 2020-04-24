@@ -167,7 +167,24 @@ namespace IO.Swagger.Controllers
             (HttpStatusCode statusCode , IEnumerable<Order> orders)= _orderManager.GetOrders();
             return StatusCode((int)statusCode, orders);
         }
-        
+
+
+        /// <summary>
+        ///  Get Order
+        /// </summary>
+        /// <param name="orderid"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("/v1/order/{orderid}")]
+        [SwaggerOperation("GetOrder")]
+        [SwaggerResponse(statusCode: 200, type: typeof(Order), description: "successful operation")]
+        public virtual IActionResult GetOrder([FromRoute] [Required] string orderid)
+        {
+            (HttpStatusCode statusCode , Order order) = _orderManager.GetOrder(orderid);
+            return StatusCode((int)statusCode, order);
+            
+        }
+
         /// <summary>
         /// Ship Order
         /// </summary>

@@ -34,8 +34,8 @@ namespace IO.Swagger.Services
             }
             else
             {
-                Order O = null;
-                return O;
+                Order o = null;
+                return o;
             }
         }
 

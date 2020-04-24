@@ -3,6 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp2.2</TargetFramework>
         <OutputType>Library</OutputType>
+        <RootNamespace>IO.Swagger.UnitTests</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

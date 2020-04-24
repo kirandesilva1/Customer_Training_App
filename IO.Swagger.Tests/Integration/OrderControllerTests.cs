@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using Newtonsoft.Json;
 using Xunit;
 
-namespace IO.Swagger.UnitTests.Functional
+namespace IO.Swagger.IntegrationTests
 {
     public class OrderControllerTests : IClassFixture<WebApplicationFactory<Startup>>
     {

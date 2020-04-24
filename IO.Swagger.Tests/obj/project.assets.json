@@ -14646,11 +14646,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/dks0488411/Training-App/IO.Swagger.UnitTests/IO.Swagger.UnitTests.csproj",
-      "projectName": "IO.Swagger.UnitTests",
-      "projectPath": "/Users/dks0488411/Training-App/IO.Swagger.UnitTests/IO.Swagger.UnitTests.csproj",
+      "projectUniqueName": "/Users/dks0488411/Training-App/IO.Swagger.Tests/IO.Swagger.Tests.csproj",
+      "projectName": "IO.Swagger.Tests",
+      "projectPath": "/Users/dks0488411/Training-App/IO.Swagger.Tests/IO.Swagger.Tests.csproj",
       "packagesPath": "/Users/dks0488411/.nuget/packages/",
-      "outputPath": "/Users/dks0488411/Training-App/IO.Swagger.UnitTests/obj/",
+      "outputPath": "/Users/dks0488411/Training-App/IO.Swagger.Tests/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

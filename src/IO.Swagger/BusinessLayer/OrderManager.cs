@@ -38,6 +38,25 @@ namespace IO.Swagger.BusinessLayer
 
         }
 
+        public (HttpStatusCode, Order order) GetOrder(string orderId)
+        {
+            Order _order = _orderService.GetOrder(orderId);
+            
+            HttpStatusCode statusCodeResult;
+            string message;
+
+            if (_order.OrderId == null)
+            {
+                statusCodeResult = HttpStatusCode.Forbidden;
+            }
+            else
+            {
+                statusCodeResult = HttpStatusCode.OK;
+            }
+
+            return  (statusCodeResult,  _order);
+        }
+
         public (HttpStatusCode, string Message) ShipOrder(string orderId)
         {
             Order _order = _orderService.GetOrder(orderId);
