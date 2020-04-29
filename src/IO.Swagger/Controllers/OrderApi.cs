@@ -112,18 +112,15 @@ namespace IO.Swagger.Controllers
         [ValidateModelState]
         [SwaggerOperation("GetCustomerOrders")]
         [SwaggerResponse(statusCode: 200, type: typeof(Order), description: "successful operation")]
-        public virtual IActionResult GetCustomerOrders([FromRoute][Required]string customerid)
-        { 
-            //e88b7009-6419-40f4-a3d0-808e4ae2e8b2
-            try
-            {
-                IEnumerable<Order> order = _orderService.GetCustomerOrders(customerid);
-                return StatusCode(200,order);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(400);
-            }
+        public virtual IActionResult GetCustomerOrders([FromRoute][Required]string customerId)
+        {
+            // IEnumerable<Order> orders = _orderService.GetCustomerOrders(customerid);
+            IEnumerable<Order> orders = _orderManager.GetCustomerOrders(customerId);
+            
+            if (orders == null)
+                return BadRequest("Orders do not exist for customer id " + customerId);
+                
+            return Ok(orders);
         }
 
         /// <summary>
@@ -176,17 +173,26 @@ namespace IO.Swagger.Controllers
         /// <param name="orderid"></param>
         /// <returns></returns>
         [HttpGet]
-        [Route("/v1/order/{orderid}")]
+        [Route("/v1/orders/{orderid}")]
         [SwaggerOperation("GetOrder")]
         [SwaggerResponse(statusCode: 200, type: typeof(Order), description: "successful operation")]
         public virtual IActionResult GetOrder([FromRoute] [Required] string orderid)
         {
-            Order order = _orderManager.GetOrder(orderid);
+            try
+            {
 
-            if (order == null)
-                return BadRequest("Order with Id " +  orderid + " does not exist");
+                Order order = _orderManager.GetOrder(orderid);
 
-            return Ok(order);
+                if (order == null)
+                    return BadRequest("Order with Id " + orderid + " does not exist");
+
+                return Ok(order);
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500);
+            }
         }
 
         /// <summary>

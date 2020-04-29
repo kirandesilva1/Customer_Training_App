@@ -10,5 +10,7 @@ namespace IO.Swagger.BusinessLayer
         (HttpStatusCode, IEnumerable<Order>) GetOrders();
         Order GetOrder(string orderId);
         (HttpStatusCode,string Message) ShipOrder(string orderId);
+        IEnumerable<Order> GetCustomerOrders(string customerId);
+        
     }
 }

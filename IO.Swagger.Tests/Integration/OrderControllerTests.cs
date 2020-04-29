@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using IO.Swagger.Models;
+using IO.Swagger.UnitTests;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Newtonsoft.Json;
 using Xunit;
@@ -21,20 +22,38 @@ namespace IO.Swagger.IntegrationTests
         }
         
         [Fact]
-        public async Task Should_Return_200_For_GetOrders()
+        public async Task Should_Return_For_GetOrders()
         {
-            var client = _factory.CreateClient();
-
             // Act
-            var response = await client.GetAsync("/v1/orders");
 
-            // Assert
-            response.EnsureSuccessStatusCode(); // Status Code 200-299
+            for (int i = 0; i < 4; i++)
+            {
+                // CREATE ORDER
+                OrderItem item = new OrderItem();
+                item.Cost = 120;
+                item.Qty = 10;
+                item.UnitPrice = 12;
+                item.ItemName = "Talon GT";
             
-            //List<Customer> customers = await response.Content.ReadAsAsync<List<Customer>>();
+                Order order = new Order();
+                order.Customer = new Customer(){ Name = "Ktest-" + i};
+                order.Description = "Test Order";
+                order.Shipaddress = new Address()
+                {
+                    Streetname = "154 court street",
+                    Zipcode = "15221"
+                };
+                order.Status = Status.Active;
+                order.OrderItems = new List<OrderItem>(){item};
+
+                string orderId = await TestManager.CreateOrder(order, _factory);
+
+            }
+
+            List<Order> orders = await TestManager.GetOrders(_factory);
+
+            Assert.NotNull(orders);
             
-            Assert.Equal("application/json; charset=utf-8", 
-                response.Content.Headers.ContentType.ToString());
         }
         
         [Fact]
@@ -109,7 +128,58 @@ namespace IO.Swagger.IntegrationTests
             
             
             // SHOULD FAIL DUE TO VALIDATION
+            // TODO: Change Status Code written for particular error
             Assert.Equal(HttpStatusCode.Forbidden,shipOrderResponse.StatusCode); 
+            
+        }
+
+        [Fact]
+        public async Task Should_Get_Order_By_Id()
+        {
+            // CREATE CUSTOMER
+            Customer customer = new Customer();
+            customer.Name = "Test Customer-" + Convert.ToBase64String(Guid.NewGuid().ToByteArray()).Substring(0, 8);
+            customer.Groupid = 1;
+            customer.Numberoforders = 2;
+            customer.Address = new Address()
+            {
+                Streetname = "200 Van Exel st",
+                Zipcode = "15221-111"
+            };
+            customer.Billing = new BillingInfo()
+            {
+                CreditCardNumber = "xxx-xxxx-xxx-xxxx",
+                BillinginfoId = "x121324"
+            };
+
+            string customerId = await TestManager.CreateCustomer(customer, _factory);
+            
+            Assert.NotNull(customerId);
+            
+            Customer customerCreated = await TestManager.GetCustomer(customerId, _factory);
+            
+            OrderItem item = new OrderItem();
+            item.Cost = 120;
+            item.Qty = 10;
+            item.UnitPrice = 12;
+            item.ItemName = "Talon GT";
+            
+            Order order = new Order();
+            order.Customer = customerCreated;
+            order.Description = "Test Order";
+            order.Shipaddress = new Address()
+            {
+                Streetname = "154 court street",
+                Zipcode = "15221"
+            };
+            order.Status = Status.Active;
+            order.OrderItems = new List<OrderItem>(){item};
+
+            string orderId = await TestManager.CreateOrder(order, _factory);
+
+            Order _order = await TestManager.GetOrder(orderId, _factory);
+            
+            Assert.Equal(orderId,_order.OrderId); 
             
         }
         

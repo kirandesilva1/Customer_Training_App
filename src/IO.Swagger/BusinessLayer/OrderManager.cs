@@ -70,5 +70,12 @@ namespace IO.Swagger.BusinessLayer
             return  (statusCodeResult,  message);
 
         }
+
+        public IEnumerable<Order> GetCustomerOrders(string customerId)
+        {
+            IEnumerable<Order> orders = _orderService.GetCustomerOrders(customerId);
+
+            return orders;
+        }
     }
 }
