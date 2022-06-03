@@ -15,7 +15,7 @@
     "@angular/cdk": "latest",
     "@angular/common": "~8.2.5",
     "@angular/compiler": "~8.2.5",
-    "@angular/core": "~8.2.5",
+    "@angular/core": "~11.0.5",
     "@angular/forms": "~8.2.5",
     "@angular/material": "latest",
     "@angular/platform-browser": "~8.2.5",
